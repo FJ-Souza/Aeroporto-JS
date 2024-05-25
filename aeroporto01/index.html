@@ -11,7 +11,7 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js.map"></script>
 </head>
-<body>
+<body onload="inicializa()">
     <header>
         <div class="d-flex justify-content-center">
             <h1>Dados Climáticos - Aeroportos</h1>
@@ -41,8 +41,9 @@
             </div>
             <div>
                 <div class="d-flex justify-content-center">
-                    <input type="text">
-                    <input type="submit" value="Enviar">
+                    <input id="clima" type="text" name="clima" maxlength="8" size="10" value="">
+                    <input type="submit" name="botao" id="botao" value="Enviar">
+                    <div id="resultado"></div>
                 </div>
             </div>   
         </div>
