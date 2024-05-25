@@ -11,38 +11,38 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js.map"></script>
 </head>
-<body onload="inicializa()">
+<body onload="inicializa()" class="container-fluid">
     <header>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center p-3 mb-2 bg-success text-white">
             <h1>Dados Climáticos - Aeroportos</h1>
         </div>
         
     </header>
     <section>
-        <div>
+        <div class="mb-2 bg-light text-dark" style="padding: 30px;">
             <div class="d-flex justify-content-center">
                 <h4>Selecione a Estação Meteorologica do aeroporto desejado</h4>
             </div>
             <div>
                 <div class="d-flex justify-content-center">
-                    <select name="sigla" id="aeroporto">
+                    <select name="sigla" id="aeroporto" class="form-select-sm" style="padding: 8px;">
                         <option value="RJ">RJ</option>
                         <option value="SP">SP</option>
                         <option value="Japao">Japão</option>
                         <option value="MG">MG</option>
                     </select>
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Enviar" class="btn btn-outline-secondary" style="margin-left: 10px;">
                 </div>
             </div>            
         </div>
-        <div>
+        <div class="mb-2 bg-success text-white" style="padding:20px;">
             <div class="d-flex justify-content-center">
                 <h4>Digite o código do aeroporto</h4>
             </div>
             <div>
                 <div class="d-flex justify-content-center">
-                    <input id="clima" type="text" name="clima" maxlength="8" size="10" value="">
-                    <input type="submit" name="botao" id="botao" value="Enviar">
+                    <input id="clima" type="text" name="clima" maxlength="8" size="10" value="" style="border-radius: 8px;">
+                    <input type="submit" name="botao" id="botao" value="Enviar" class="btn btn-secondary" style="margin-left: 10px;">
                     <div id="resultado"></div>
                 </div>
             </div>   
@@ -50,4 +50,14 @@
     </section>
     
 </body>
+<footer class="text-center container-fluid mb-2 bg-light text-dark">
+    <div class="container-fluid p-4 pb-0">    
+        <p class="d-flex justify-content-center align-items-center">
+        Fontes de Dados: API "CPTEC/INPE", disponível em:  <a href="http://servicos.cptec.inpe.br/XML/"> http://servicos.cptec.inpe.br/XML/ </a>
+        </p>        
+    </div>
+    <div class="text-center p-3 container-fluid fw-bold" style="background-color: rgba(0, 0, 0, 0.2);">
+        Direitos Reservados - 2024
+    </div>
+</footer>
 </html>
