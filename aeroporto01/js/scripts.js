@@ -16,6 +16,9 @@ function consultaClima() {
         case 'SBUL':
             nomeEstacao = 'Uberlândia - MG';
             break;
+        case 'SBBH':
+            nomeEstacao = 'Pampulha - MG';
+            break;
         case 'SBCB':
             nomeEstacao = 'Cabo Frio - RJ';
             break;
