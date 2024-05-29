@@ -85,7 +85,7 @@ function consultaClima() {
                             break;
                     }
 
-                    div.innerHTML = `<div class="d-flex justify-content-center"><h5 style="color: white; justify-content: center;">
+                    div.innerHTML = `<div class="d-flex justify-content-center"><h5 style="color: white; justify-content: center; padding: 40px 20px 40px; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) ;border: 5px groove #333;">
                         Código: ${codigo}<br>
                         Aeroporto: ${nomeEstacao}<br>
                         Atualização: ${atualizacao}<br>
