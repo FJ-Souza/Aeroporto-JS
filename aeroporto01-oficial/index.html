@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeroporto01</title>
+    <link id="css" rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</head>
+<body onload="inicializa()" class="container-fluid">
+    <header>
+        <!--Navbar-->
+        <div class="position-relative">
+            <nav class="navbar navbar-expand-lg fundo py-4">
+                <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="" style="color: #eabc17; font-size: 25px;">Aeroporto_01</a>
+                <div class="position-absolute navbar-collapse end-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="#" style="color: #eabc17; font-size: 25px;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="#sobre" style="color: #eabc17; font-size: 25px;">Clima</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="#ctt" style="color: #eabc17; font-size: 25px;">Ajuda</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </div>  
+    </header>
+    <section>
+        <div>
+            <img src="img/clouds.jpg" alt="" height="400px" width="100%">
+        </div>
+    </section>
+    <section class="fundo">
+        <div class="d-flex justify-content-center p-3 mb-2 textyellow">
+            <h1>Dados Climáticos - Aeroportos</h1>
+        </div><hr>
+        <div class="mb-2 textyellow" style="padding: 30px;">
+            <div class="d-flex justify-content-center">
+                <h4>Selecione a Estação Meteorologica do aeroporto desejado</h4>
+            </div>
+            <div>
+                <div class="d-flex justify-content-center text-dark">
+                    <div>
+                        <select name="sigla" name="clima" id="clima" class="form-select-sm" style="padding: 8px;">
+                        <option value="XXXX">Escolha uma Estação</option>
+                        <option value="SBAR">Santa Maria - SE</option>
+                        <option value="SBGR">Guarulhos - SP</option>
+                        <option value="SBUL">Uberlândia - MG</option>
+                        <option value="SBBH">Pampulha - MG</option>
+                        <option value="SBCB">Cabo Frio - RJ</option>
+                    </select>
+                    <input type="submit" name="botao" id="botao" value="Enviar" class="btn btn-warning" style="margin-left: 10px;">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="d-block text-dark" id="resultado"></div>
+                </div>
+                <div class="d-flex justify-content-center py-4" >
+                    <input type="button" name="btlimpar" id="btlimpar" value="Limpar Opções" style="border-color: black; color: black; background-color: lightgrey; font-size: 20px; padding: 10px 15px; border-radius: 15px;" onclick="limpar()"
+                </div>
+            </div>            
+        </div>
+    </section>
+    <!--Duvidas-->
+    <section>
+        <div class="" style=" padding: 60px;">
+            <h1 class="text-dark">
+                <img src="./img/light_13549304.png" alt="" style="width: 90px; height: 90px;">
+                Dúvidas Frequentes
+            </h1>
+            <div class="accordion" id="accordionExample" style="padding-top: 50px;">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button" style="background-color: #38b6ff;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h4># Como saber o clima?</h4>
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Basta escolher a cidade desejada e clicar em enviar.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item" >
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" style="background-color: #38b6ff;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h4># Como saber o clima?</h4>
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Basta escolher a cidade desejada e clicar em enviar.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" style="background-color: #38b6ff;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <h4># Como saber o clima?</h4>
+                    </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Basta escolher a cidade desejada e clicar em enviar.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-4 pb-0">    
+            <p class="d-flex justify-content-center align-items-center">
+            Fontes de Dados: API "CPTEC/INPE", disponível em:  <a href="http://servicos.cptec.inpe.br/XML/"> http://servicos.cptec.inpe.br/XML/ </a>
+            </p>        
+        </div>
+    </section>
+    <footer class="text-center container-fluid mb-2 fundo text-dark">
+        <div class="text-center p-3 container-fluid fw-bold fundo">
+            Direitos Reservados - 2024
+        </div>
+    </footer>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
