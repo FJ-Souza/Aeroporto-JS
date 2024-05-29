@@ -2,6 +2,9 @@ function inicializa(){
     var bt = document.getElementById('botao');
     bt.onclick = consultaClima;
 }
+function styleCSS(css){
+    document.getElementById("css").setAttribute("href",css);
+}
 
 function consultaClima() {
     var clima = document.getElementById('clima').value;
@@ -34,6 +37,7 @@ function consultaClima() {
     var xmlhttp;
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
+        xmlhttp.overrideMimeType("application/xml;charset=utf-8");
     } else {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
@@ -51,15 +55,45 @@ function consultaClima() {
                 if (metar) {
                     var codigo = metar.getElementsByTagName("codigo")[0].textContent;
                     var temperatura = metar.getElementsByTagName("temperatura")[0].textContent;
+                    var atualizacao = metar.getElementsByTagName("atualizacao")[0].textContent;
+                    var descricao = metar.getElementsByTagName("tempo_desc")[0].textContent;
                     var umidade = metar.getElementsByTagName("umidade")[0].textContent;
                     var pressao = metar.getElementsByTagName("pressao")[0].textContent;
+                    var sig = metar.getElementsByTagName("tempo")[0].textContent;
+
+                    switch (sig) {
+                        case "in":
+                            styleCSS("./css/ensolarado.css")
+                            break;
+                        case "c":
+                            styleCSS("./css/chuvoso.css")
+                            break;
+                        case "pm":
+                            styleCSS("./css/chuvoso.css")
+                            break;
+                        case "ps":
+                            styleCSS("./css/ensolarado.css")
+                            break;
+                        case "cl":
+                            styleCSS("./css/ensolarado.css")
+                            break;
+                        case "nd":
+                            styleCSS("./css/nublado.css")
+                            break;
+                        default:
+                            
+                            break;
+                    }
 
                     div.innerHTML = `
                         Código: ${codigo}<br>
                         Aeroporto: ${nomeEstacao}<br>
+                        Atualização: ${atualizacao}<br>
                         Temperatura: ${temperatura}°C<br>
+                        Sigla: ${sig}<br>
+                        Descrição: ${descricao}<br>
+                        Pressão: ${pressao} mb <br>
                         Umidade: ${umidade}%<br>
-                        Pressão: ${pressao} hPa
                     `;
                 } else {
                     div.innerHTML = 'Dados não disponíveis para a estação.';
@@ -72,7 +106,13 @@ function consultaClima() {
         }
     };
 
-  
+    
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
+}
+
+function limpar(){
+    var el = document.getElementById("resultado");
+    el.innerHTML = "";
+    styleCSS("./css/estilo.css")
 }
