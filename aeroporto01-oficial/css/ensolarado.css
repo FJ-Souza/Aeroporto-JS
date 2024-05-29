@@ -1,0 +1,16 @@
+#resultado{
+    background-image: url(../img/ensoladaro.jpg);
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 70vh;
+    width: 100vh;
+}
+.fundo{
+    background-color: #38b6ff;
+}
+.textyellow{
+    color: #eabc17;
+}

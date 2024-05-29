@@ -4,3 +4,7 @@
 .textyellow{
     color: #eabc17;
 }
+
+#resultado{
+    background-image: none;
+}
