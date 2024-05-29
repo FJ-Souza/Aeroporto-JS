@@ -85,7 +85,7 @@ function consultaClima() {
                             break;
                     }
 
-                    div.innerHTML = `
+                    div.innerHTML = `<div class="d-flex justify-content-center"><h5 style="color: white; justify-content: center;">
                         Código: ${codigo}<br>
                         Aeroporto: ${nomeEstacao}<br>
                         Atualização: ${atualizacao}<br>
@@ -94,6 +94,7 @@ function consultaClima() {
                         Descrição: ${descricao}<br>
                         Pressão: ${pressao} mb <br>
                         Umidade: ${umidade}%<br>
+                        </h5></div>
                     `;
                 } else {
                     div.innerHTML = 'Dados não disponíveis para a estação.';

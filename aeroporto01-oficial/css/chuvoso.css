@@ -7,6 +7,9 @@
     position: relative;
     height: 70vh;
     width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .fundo{
     background-color: #38b6ff;
