@@ -5,20 +5,31 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 70vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     
     align-items: center;
 }
 
-.fundo{
-    background-color: #38b6ff;
+#fundo{
+    background-color: #075583;
 }
-.textyellow{
+#texttitle{
     color: #eabc17;
 }
 
 #resultado{
     background-image: none;
+}
+
+#logo{
+    background-image: url(../img/logoaviao.png);
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 120px;
+    width: 120px;
 }
