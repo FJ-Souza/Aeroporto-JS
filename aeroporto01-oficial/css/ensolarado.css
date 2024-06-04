@@ -5,15 +5,18 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 70vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.fundo{
+#fundo{
     background-color: #38b6ff;
 }
-.textyellow{
-    color: #eabc17;
+#texttitle{
+    color: #fff67c;
+}
+#resultado{
+    background-image: none;
 }

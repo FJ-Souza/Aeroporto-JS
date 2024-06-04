@@ -1,32 +1,22 @@
 #img-clima{
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url("../img/chuvoso.jpg");
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url("../img/nublado.jpg");
     text-align: center;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 70vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+#fundo{
+    background-color: #303030;
+}
+#texttitle{
+    color: #f2f2f2;
+}
 #resultado{
-    
-    padding: 20px 20px 70px;
-    border: 5px groove #333;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    height: 117%;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(255, 29, 29, 0.2);
-
-}
-.fundo{
-    background-color: #38b6ff;
-}
-.textyellow{
-    color: #eabc17;
+    background-image: none;
 }
