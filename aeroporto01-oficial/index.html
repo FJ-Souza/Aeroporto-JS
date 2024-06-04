@@ -4,15 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Aeroporto01</title>
-        <link id="css" rel="stylesheet" href="./css/estilo.css">
-        <link id="background" rel="stylesheet" href="">
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
-
-        <script src="./js/bootstrap.bundle.min.js"></script>
+        <link id="css" rel="stylesheet" href="./css/estilo.css"> <!-- Link do CSS externo -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css"> <!-- Link do bootstrap CSS externo -->
+        <script src="./js/bootstrap.bundle.min.js"></script> <!-- Link do bootstrap externo -->
     </head>
     <body onload="inicializa()" class="container-fluid g-0">
         <header>
-            <!--Navbar-->
+            <!--Navbar Início-->
             <div class="position-relative">
                 <nav class="navbar navbar-expand-lg" id="fundo">
                     <div class="container-fluid">
@@ -34,16 +32,19 @@
                     </div>
                 </nav>
             </div>  
+            <!--Navbar Fim --> 
         </header>
         <hr style="color: #fff; ">    
+        <!--Section 1 Início -->  
         <section class="" id="fundo">
             <div class="d-flex justify-content-center p-3 mb-2 " id="texttitle">
-                <h1>Dados Climáticos - Aeroportos</h1>
+                <h1>Dados Climáticos - Aeroportos</h1> <!-- Titulo -->
             </div>
             <div id="img-clima" class="mb-2 d-flex" style="padding: 30px; flex-direction: column;">
                 <div class="" style="padding: 50px;">
                     <h4 id="texttitle">Selecione a Estação Meteorologica do aeroporto desejado</h4>
                 </div>
+                <!-- Select Início --> 
                 <div class="d-flex justify-content-center mt-4" style="height: 100%; width: 100%; align-items: center;">
                     <div>
                         <div class=" text-dark pb-4">
@@ -59,17 +60,21 @@
                                 <input type="submit" name="botao" id="botao" value="Enviar" class="btn btn-warning" style="margin-left: 10px;">
                             </div>
                         </div>
+                        <!-- Div que mostra o resultado da pesquisa -->   
                         <div class="">
                             <div class="text-dark" id="resultado"></div>
                         </div>
+                        <!-- Botão para limpar a div 'resultado' -->
                         <div class="" style="padding: 20% 0% 10%;">
                             <input type="button" name="btlimpar" id="btlimpar" value="Limpar Opções" style="border-color: black; color: black; background-color: lightgrey; font-size: 20px; padding: 10px 15px; border-radius: 15px;" onclick="limpar()">
                         </div>
                     </div>
-                </div>            
+                </div>
+                <!-- Select Fim -->            
             </div>
         </section>
-        <!--Duvidas-->
+        <!--Section 1 Fim -->
+        <!--Section 2 dúvidas Início -->
         <section>
             <div class="" id="#ctt" style=" padding: 60px;">
                 <h1 class="text-dark">
@@ -115,17 +120,21 @@
                     </div>
                 </div>
             </div>
+            <!-- Fonte da API utilisada para buscar os dados -->
             <div class="container-fluid p-4 pb-0">    
                 <p class="d-flex justify-content-center align-items-center">
-                    Fontes de Dados: API "CPTEC/INPE", disponível em:  <a href="http://servicos.cptec.inpe.br/XML/"> http://servicos.cptec.inpe.br/XML/ </a>
+                    Fontes de Dados: API "CPTEC/INPE", disponível em:  <a href="http://servicos.cptec.inpe.br/XML/"> http://servicos.cptec.inpe.br/XML/ </a> <!-- link da API -->
                 </p>        
             </div>
         </section>
+        <!--Section 2 dúvidas Fim -->
+        <!-- Footer início -->
         <footer class="text-center container-fluid" id="fundo">
             <div class="text-center p-3 container-fluid fw-bold" id="fundo">
                 <h4 id="texttitle">Direitos Reservados - 2024</h4>
             </div>
         </footer>
-        <script src="./js/scripts.js"></script>
+        <!-- Footer Fim -->
+        <script src="./js/scripts.js"></script> <!-- link do arquivo js externo -->
     </body>
 </html>
