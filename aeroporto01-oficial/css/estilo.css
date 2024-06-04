@@ -22,3 +22,14 @@
 #resultado{
     background-image: none;
 }
+
+#logo{
+    background-image: url(../img/logoaviao.png);
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 120px;
+    width: 120px;
+}
