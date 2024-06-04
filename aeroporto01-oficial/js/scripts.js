@@ -1,14 +1,21 @@
+//Função responsável por monitorar o input com id 'botao' para ativar a função 'consultaClima'
 function inicializa(){
     var bt = document.getElementById('botao');
     bt.onclick = consultaClima;
 }
+//Função responsável por trocar o CSS
 function styleCSS(css){
     document.getElementById("css").setAttribute("href",css);
 }
 
+//Função responsável por criar uma url,
+// buscar as informações usando a API e
+// Apresentá-las no HTML 
 function consultaClima() {
+    // Obtém o select e o valor selecionado
     var clima = document.getElementById('clima').value;
     var nomeEstacao = '';
+    // Obtém o select e o valor selecionado
     switch (clima) {
         case 'SBAR':
             nomeEstacao = 'Santa Maria - SE';
@@ -29,19 +36,24 @@ function consultaClima() {
             nomeEstacao = 'Estação Desconhecida';
             break;
     }
-    
+
+    // Elemento div onde os resultados serão exibidos
     var div = document.getElementById('resultado');
+    // URL da API com o código da estação selecionada
     var url = 'http://servicos.cptec.inpe.br/XML/estacao/' + clima + '/condicoesAtuais.xml';
     console.log(url);
 
     var xmlhttp;
+    // URL da API com o código da estação selecionada
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
         xmlhttp.overrideMimeType("application/xml;charset=utf-8");
     } else {
+        // Compatibilidade com IE
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
+    // Função de erro para lidar com falhas na requisição
     xmlhttp.onerror = function(){
         div.innerHTML = 'VALOR INVÁLIDO!';
     }
@@ -49,9 +61,12 @@ function consultaClima() {
 
     xmlhttp.onload = function() {
         if (xmlhttp.status === 200) {
+            // Função para processar a resposta da requisição
             var xmlDoc = xmlhttp.responseXML;
+            // Verifica se o XML foi recebido corretamente
             if (xmlDoc) {
                 var metar = xmlDoc.getElementsByTagName("metar")[0];
+                // Verifica se o elemento <metar> está presente no XML
                 if (metar) {
                     var codigo = metar.getElementsByTagName("codigo")[0].textContent;
                     var temperatura = metar.getElementsByTagName("temperatura")[0].textContent;
@@ -61,6 +76,7 @@ function consultaClima() {
                     var pressao = metar.getElementsByTagName("pressao")[0].textContent;
                     var sig = metar.getElementsByTagName("tempo")[0].textContent;
 
+                    //Troca o CSS do site de acordo com a sigla
                     switch (sig) {
                         case "in":
                             styleCSS("./css/ensolarado.css")
@@ -85,6 +101,7 @@ function consultaClima() {
                             break;
                     }
 
+                    // Exibe os dados na div id 'resultado'
                     div.innerHTML = `<div class="d-flex justify-content-center"><h5 style="color: white; justify-content: center; padding: 40px 20px 40px;">
                         Código: ${codigo}<br>
                         Aeroporto: ${nomeEstacao}<br>
@@ -97,21 +114,25 @@ function consultaClima() {
                         </h5></div>
                     `;
                 } else {
+                    // Caso o elemento <metar> não esteja presente no XML
                     div.innerHTML = 'Dados não disponíveis para a estação.';
                 }
             } else {
+                // Caso o XML não possa ser processado
                 div.innerHTML = 'Erro ao processar a resposta XML.';
             }
         } else {
+            // Caso o XML não possa ser processado
             div.innerHTML = 'Erro ao realizar a requisição: ' + xmlhttp.status;
         }
     };
 
-    
+    // Abre e envia a requisição
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
 
+//Função responsavel por limpar os dados exibidos na div com id 'resultado'
 function limpar(){
     var el = document.getElementById("resultado");
     el.innerHTML = "";
