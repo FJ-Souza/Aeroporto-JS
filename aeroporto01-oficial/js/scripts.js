@@ -8,13 +8,40 @@ function styleCSS(css){
     document.getElementById("css").setAttribute("href",css);
 }
 
+// Função que retorna o nome da estação com base no código da estação
+function getEstacaoNome(clima) {
+    var nomeEstacao = '';
+    switch (clima) {
+        case 'SBAR':
+            nomeEstacao = 'Santa Maria - SE';
+            break;
+        case 'SBGR':
+            nomeEstacao = 'Guarulhos - SP';
+            break;
+        case 'SBUL':
+            nomeEstacao = 'Uberlândia - MG';
+            break;
+        case 'SBBH':
+            nomeEstacao = 'Pampulha - MG';
+            break;
+        case 'SBCB':
+            nomeEstacao = 'Cabo Frio - RJ';
+            break;
+        default:
+            nomeEstacao = 'Estação Desconhecida';
+            break;
+    }
+    return nomeEstacao;
+}
+
+
 //Função responsável por criar uma url,
 // buscar as informações usando a API e
 // Apresentá-las no HTML 
 function consultaClima() {
     // Obtém o select e o valor selecionado
     var clima = document.getElementById('clima').value;
-    var nomeEstacao = '';
+    var nomeEstacao = getEstacaoNome(clima);
     // Obtém o select e o valor selecionado
     switch (clima) {
         case 'SBAR':
