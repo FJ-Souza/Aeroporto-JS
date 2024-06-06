@@ -160,3 +160,24 @@ function limpar(){
     el.innerHTML = "";
     styleCSS("./css/estilo.css")
 }
+function consultaFonte(){
+    // Obtém o select e o valor selecionado
+    var fonte = document.getElementById('fonte').value;
+    // Obtém o select e o valor selecionado
+    switch (fonte) {
+        case 'padrao':
+            document.body.style.fontFamily = 'Segoe UI';
+            break;
+        case 'Helvetica':
+            document.body.style.fontFamily = 'Helvetica';
+            break;
+        case 'Verdana':
+            document.body.style.fontFamily = 'Verdana';
+            break;
+        case 'CourierNew':
+            document.body.style.fontFamily = 'Courier New';
+            break;
+        default:
+            break;
+    }
+}
