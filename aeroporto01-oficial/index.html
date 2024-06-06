@@ -14,10 +14,9 @@
             <div class="position-relative">
                 <nav class="navbar navbar-expand-lg" id="fundo">
                     <div class="container-fluid">
-                        <!-- <a class="navbar-brand fw-bold" id="texttitle" href="" style="font-size: 25px;"></a> -->
                         <div class="navbar-brand fw-bold" id="logo"></div>
                         <div class="position-absolute navbar-collapse end-0">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0"  id="contents">
                                 <li class="nav-item">
                                     <a class="nav-link active fw-bold" id="texttitle" aria-current="page" href="#" style="font-size: 25px;">Home</a>
                                 </li>
@@ -25,7 +24,20 @@
                                     <a class="nav-link active fw-bold" id="texttitle" aria-current="page" href="#sobre" style="font-size: 25px;">Clima</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active fw-bold" id="texttitle" aria-current="page" href="#ctt" style="font-size: 25px;">Ajuda</a>
+                                    <div class="d-flex justify-content-center mt-4" style="height: 100%; width: 100%; align-items: center;">
+                                        <div>
+                                            <div class=" text-dark pb-4">
+                                                <div>
+                                                    <select name="fonte" id="fonte" class="form-select-sm" style="padding: 8px;" onchange="consultaFonte();">
+                                                        <option value="padrao" >Padrão</option>
+                                                        <option value="Helvetica" >Helvetica</option>
+                                                        <option value="Verdana" >Verdana</option>
+                                                        <option value="CourierNew" >Courier New</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -57,7 +69,6 @@
                                 <option value="SBBH">Pampulha - MG</option>
                                 <option value="SBCB">Cabo Frio - RJ</option>
                                 </select>
-                                <input type="submit" name="botao" id="botao" value="Enviar" class="btn btn-warning" style="margin-left: 10px;">
                             </div>
                         </div>
                         <!-- Div que mostra o resultado da pesquisa -->   
