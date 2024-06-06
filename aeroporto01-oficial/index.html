@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aeroporto01</title>
+        <title>SkyWeather</title>
         <link id="css" rel="stylesheet" href="./css/estilo.css"> <!-- Link do CSS externo -->
         <link rel="stylesheet" href="./css/bootstrap.min.css"> <!-- Link do bootstrap CSS externo -->
         <script src="./js/bootstrap.bundle.min.js"></script> <!-- Link do bootstrap externo -->
@@ -49,7 +49,7 @@
                     <div>
                         <div class=" text-dark pb-4">
                             <div>
-                                <select name="sigla" name="clima" id="clima" class="form-select-sm" style="padding: 8px;">
+                                <select onchange="consultaClima()" name="sigla" name="clima" id="clima" class="form-select-sm" style="padding: 8px;">
                                 <option value="XXXX">Escolha uma Estação</option>
                                 <option value="SBAR">Santa Maria - SE</option>
                                 <option value="SBGR">Guarulhos - SP</option>

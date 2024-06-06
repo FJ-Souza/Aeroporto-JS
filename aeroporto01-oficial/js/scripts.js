@@ -1,8 +1,3 @@
-//Função responsável por monitorar o input com id 'botao' para ativar a função 'consultaClima'
-function inicializa(){
-    var bt = document.getElementById('botao');
-    bt.onclick = consultaClima;
-}
 //Função responsável por trocar o CSS
 function styleCSS(css){
     document.getElementById("css").setAttribute("href",css);
